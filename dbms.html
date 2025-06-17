@@ -1,0 +1,316 @@
+<html>
+  <head>
+    <title>Computer System</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="TOC">
+        <h2>Topics</h2>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#terms">Database terminologies</a></li>
+          <li><a href="#types">Types of Database Models</a></li>
+          <li>
+            <a href="#Integrity Constraints"> Integrity Constraints </a>
+          </li>
+          <li>
+            <a href="#Normal">Normalization</a>
+          </li>
+          <li>
+          <a href="#Centralized"> Centralized vs Distributed Database</a>
+              </li>
+            
+          </li>
+          <li>
+            <a href="#Security"> Database Security</a>
+            
+              <li>
+                <a href="#SQL"> SQL Data Types</a>
+              </li>
+             
+            
+          
+        
+        </ul>
+      </div>
+
+      <div id="details">
+        <div id="introduction">
+          <h1>Understanding Data, Information, and Databases</h1>
+          <p>
+            Data refers to unorganized, raw facts or symbols gathered from various sources. On their own, these values or observations do not convey any specific meaning.
+
+            Example: Numbers like 85, 90, 78—possibly student scores—are meaningless without further interpretation.
+          </p>
+          
+          <h3>What is Information?</h3>
+          <p>
+            Information is data that has been processed and structured to provide relevance and meaning. It gives context to raw data, making it useful for decision-making.
+
+Example: "The class average score is 84.3" is meaningful information derived from the raw scores.
+          </p>
+
+          <h3>Characteristics of Good Information</h3>
+          <p>
+            Accuracy: Should be error-free and dependable.
+
+Relevance: Must relate directly to the subject or decision at hand.
+
+Timeliness: Should be current and available when needed.
+
+Completeness: Must include all necessary data.
+
+Clarity: Easily interpreted and clearly presented.
+
+
+          </p>
+
+          <h3>What is a Database?</h3>
+          <p>
+            A database is an organized collection of related data, stored electronically, allowing for efficient data retrieval, storage, and management.
+
+Example: A school's database may include student information, exam results, and attendance, all stored in a structured manner.
+          </p>
+
+          <h3>Purpose of a Database</h3>
+          <p>
+            Databases aim to systematically organize and manage large volumes of data for:
+
+            Easy access and retrieval
+            
+            Secure and consistent data handling
+            
+            Minimizing redundancy
+            
+            Supporting multiple users and applications
+          </p>
+
+          <div id="terms">
+            <h2>Basic Database Terminology</h2>
+            <p>
+              Table: A grid of data organized in rows and columns.
+
+1.Field: A column in a table representing a specific data attribute.
+
+2.Record (or Tuple): A row in the table representing a single data item or entity.
+
+3.Object: In object-oriented databases, it is a unit that includes both data and behavior.
+
+4.Keys:
+
+    i.Primary Key: Uniquely identifies each row in a table.
+
+    ii.Foreign Key: Links one table to another using the primary key.
+
+    iii.Candidate Key: Possible choices for a primary key.
+
+    iv. Composite Key: A key made from multiple fields.
+
+
+            <h3>Data Dictionary</h3>
+            <p> A data dictionary acts as a catalog that stores metadata about the database, including definitions for tables, fields, types, and constraints, helping manage the database design.
+
+            </p>
+            
+<div id="types">
+  <h1>Types of Database Models</h1>
+      <h2> Hierarchical Model </h2>
+      <ul>
+        <li>
+          Data is structured like a tree with one-to-many relationships.
+        </li>
+        <li>
+          Each child has one parent, but one parent can have many children.    
+        </li>
+        <li>
+          Best for data with predictable hierarchy.
+        </li>
+      </ul>
+
+      <h2> Network Model </h2>
+      <ul>
+        <li>
+          Similar to hierarchical but allows many-to-many relationships.        </li>
+        <li>
+          Uses nodes and links to connect records.        </li>
+        <li>
+          More flexible but harder to design.        </li>
+      </ul>
+
+      <h2>Relational Model</h2>
+      <ul>
+        <li>
+          1.Data is stored in tables.        </li>
+        <li>
+          2.Relationships are established via keys.        </li>
+        <li>
+          3.Supports SQL for queries.        </li>
+          <li>Supports SQL for queries.</li>
+      </ul>
+
+  <div id="integrity Constraints">
+    <h2>Domain Constraint</h2>
+    
+  <ul><li>Ensures values fall within a valid set for a field (e.g., age must be positive).</li></ul>
+  <h2>Entity Integrity</h2>
+  <ul><li>Requires each table to have a primary key that is unique and non-null.</li></ul>
+<h2> Referential Integrity</h2>
+<ul><li>Ensures foreign keys correspond to existing records in another table.
+
+</li></ul>
+<h2>Key Summary</h2>
+<ul>
+  <li><b>Primary Key:</b> Uniquely identifies a row.</li>
+  <li><b>Foreign Key:</b> Refers to a primar key in another table.</li>
+<li><b> Candidate Key:</b>Any column that can serve as a primary key. </li>  
+<li><b>Composite Key:</b> Made up of more than one column.</li>
+</ul> 
+<div id="Normal">
+  <h1>Normalization</h1>
+  <p>
+    Normalization structures data to reduce repetition and improve integrity. It splits large tables into smaller ones linked by relationships.
+  </p>
+
+  <h2>Normal Forms</h2>
+  <ul>
+    <li>
+      <b>1NF</b>:  Data is atomic; each field holds one value. </li>
+    <li>
+      <b>2NF</b>: Builds on 1NF; all non-key fields depend on the whole primary key.
+    </li>
+    <li>
+      <b>3NF</b>Builds on 2NF; eliminates transitive dependencies.
+    </li>
+  </ul>
+
+  <h2>Benefits</h2>
+  
+    <ul>
+    <li>Reduces redundancy</li>
+
+    <li>Enhances integrity</li>
+    
+    <li>Simplifies updates</li>
+    
+    <li>Improves storage efficiency</li>
+    
+    Avoids anomalies in insertion, update, or deletion
+    </ul>
+
+  <h3> Limitations</h3>
+  <ul>
+    <li>Complex query writing due to multiple table joins</li>
+
+    <li>Slower performance for large-scale transactions</li>
+    
+    <li>Risk of over-normalization</li>
+    
+    <li>Design process can be time-consuming</li>
+    
+    </ul>
+</div>
+
+<div id="Centralized">
+  <h1>Centralized Vs Distributed Databases</h1>
+ <h2>Introduction</h2>
+ <ul>
+  <li><b> Centralized DB:</b> All data stored in a single location.</li>
+ <li><b>Distributed DB:</b> Data is spread across several locationsa and coordinated as one system.</li>
+</ul>
+<h2>Benefits</h2>
+ <ul>
+  <li> <b>Centralized: </b>Easier to manage and back up.</li>
+ <li><b>Distributed</b> Better fault tolerance, faster access for local users.</li>
+</ul>
+<div id="Database Security">
+  <h1>Database Security</h1>
+  <h2> Overview</h2>
+    <p>Database security ensures that data is accessed only by authorized users and protected from threats like unauthorized access, data leaks, or cyberattacks.</p>
+<h2>Challenges</h2>
+<ul>
+  <li>
+    Preventing unauthorized access
+  </li>
+  <li>
+    Ensuring confidentiality and privacy
+  </li>
+  <li>
+    Defending against cyber threats
+  </li>
+  <li>Managing user permissions</li>
+</ul>
+<h2> Security Techniques </h2>
+<ul>
+  <li>
+    <b> Authentication:</b> Confirms user identity.
+  </li>
+  <li>
+    <b> Authorization: </b> Grants specific access rights
+  </li>
+  <li>
+    <b> Encryption: </b> Secures data in storage and transit.
+  </li>
+  <li>
+    <b>Audit logs: </b> Track user actions.
+  </li>
+  <li>
+    <b> Firewalls: </b> Protects against unauthorized access.
+  </li>
+</ul>
+<h2>DBA Responsibilities</h2>
+<ul>
+  <li>
+    Manages access rights and user roles.
+  </li>
+  <li>
+    Monitors and audit database activity
+  </li>
+  <li>
+    Apply updates and patches
+  </li>
+  <li>
+    Enforce compliance policies
+  </li>
+</ul>
+    <div id="SQL">
+  <h1>SQL Datatypes</h1>
+  <h3> CHAR</h3>
+  <p>The CHAR data type is used to store fixed-length character strings. When you define a CHAR column, you specify its length, and the system always reserves that exact amount of space. If the stored string is shorter, the remaining space is padded with blanks. This makes CHAR efficient for storing data where the length is consistent, such as country codes or fixed-format identifiers.</p>
+  <h3> VARCHAR</h3>
+  <p>VARCHAR stores variable-length character strings, which means it only uses as much space as the actual string requires, plus a small amount of overhead. This is more space-efficient than CHAR when storing strings of varying lengths, such as names or addresses. The maximum length must be defined when creating the column.</p>
+<h3>BINARY</h3>
+<p>BINARY is similar to CHAR but stores fixed-length binary data instead of characters. This is useful for storing data like images or encrypted information where exact binary representation must be preserved. </p>
+<h3>VARBINARY</h3>
+<p>VARBINARY stores variable-length binary data. It works like VARCHAR but for binary files or data streams. This allows for efficient storage when the size of the binary data varies.</p>
+<h3>TINYBLOB</h3>
+<p>TINYBLOB is a Binary Large Object designed to store very small amounts of binary data, such as thumbnails or small icons. It supports up to 255 bytes.</p>
+<h3>TINYTEXT</h3>
+<p>TINYTEXT stores small amounts of text data, up to 255 characters. It’s useful for brief text fields like short comments or tags.</p>
+<h3>TEXT</h3>
+<p>TEXT is intended for larger amounts of textual data, such as descriptions, articles, or notes. It can store up to 65,535 characters and is useful when you expect more extended content than VARCHAR can efficiently handle.</p>
+<h3>LONGTEXT</h3>
+<p>LONGTEXT stores very large amounts of text, up to 4 gigabytes in size. It is suitable for extensive documents, such as logs, HTML content, or long-form articles.</p>
+<h3>ENUM</h3>
+<p>ENUM defines a string column that can only take one value from a predefined list of allowed values. This ensures data integrity by restricting input to specific options, such as 'Male' or 'Female', or status values like 'Pending', 'Approved', or 'Rejected'.</p>
+<h3>BIT</h3>
+<p>BIT stores bit-field values and is commonly used to represent boolean flags or binary indicators where each bit has a specific meaning.</p>
+<h3>TINYINT</h3>
+<p>TINYINT is a very small integer type that typically occupies 1 byte and can represent values from -128 to 127 in signed mode or 0 to 255 if unsigned. It’s ideal for small numeric ranges, such as age or small counters.
+BOOLEAN</p>
+<h3>INTEGER (INT) </h3>
+<p>INTEGER or INT is a common numeric type used to store whole numbers. It typically uses 4 bytes and can represent large ranges of positive and negative numbers, suitable for general counting or identification purposes.</p>
+<h3>FLOAT and DOUBLE</h3>
+<p>FLOAT and DOUBLE are approximate numeric types that store decimal numbers using floating-point representation. FLOAT uses less storage but less precision, while DOUBLE uses more storage and provides higher precision. They are useful when exact decimal precision is not critical, such as scientific calculations.</p>
+<h3>DECIMAL</h3>
+<p>DECIMAL (or NUMERIC) is a fixed-point numeric type that stores exact decimal numbers with a defined precision and scale. It is often used for financial data where precise decimal representation is required to avoid rounding errors.</p>
+<h3>DATE</h3>
+<p>The DATE data type stores calendar dates (year, month, and day) without time. It is useful for birthdays, appointment dates, or any date-only information.</p>
+<h3>DATETIME</h3>
+<p>DATETIME stores both date and time values together, including hours, minutes, and seconds. This is useful for timestamps, event logs, or any data requiring full temporal detail.</p>
+
+
+</div>
+    <script src="index.js"></script>
+  </body>
+</html>

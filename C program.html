@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 2 – C Programming: Functions</title>
+  <link rel="stylesheet" href="dbms.css" />
+</head>
+<body>
+  <div id="main">
+    <div id="TOC">
+      <h2>Topics</h2>
+      <ul>
+      <li><a href="Mixture.html">Home Page</a></li>
+        <li><a href="#functions">Understanding Functions in C</a></li>
+        <li><a href="#categories">Function Classification</a></li>
+        <li><a href="#storage">Storage Classes</a></li>
+        <li><a href="#recursion">Recursive Functions</a></li>
+        <li><a href="#arraypass">Passing Array to Functions</a></li>
+      </ul>
+    </div>
+
+    <div id="details">
+      <div id="functions">
+        <h1>Understanding Functions in C</h1>
+
+        <div class="question">
+          <h2>a. Define Function</h2>
+          <div class="answer">
+            <p>A function in C is a modular block of code used to carry out a specific operation. Functions enhance code reusability and simplify program logic by dividing tasks into separate, manageable sections.</p>
+            <p>Example: A function that multiplies two numbers and returns the product:</p>
+            <pre><code>int multiply(int x, int y) {
+  return x * y;
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="question">
+          <h2>b. Syntax of Functions</h2>
+          <div class="answer">
+            <p>The basic structure of a function includes a return type, function name, parameters (if any), and a code block enclosed in curly braces.</p>
+            <pre><code>return_type function_name(parameter_list) {
+  // statements
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="question">
+          <h2>c. Types of Functions</h2>
+          <div class="answer">
+            <p>In C, functions are mainly categorized as:</p>
+            <ul>
+              <li>Library Functions – Predefined by C libraries, such as <code>puts()</code>, <code>getchar()</code>, or <code>sqrt()</code>.</li>
+              <li>User-defined Functions – Created by the programmer to perform specific tasks that are not covered by standard libraries.</li>
+            </ul>
+            <p>Example of a user-defined function:</p>
+            <pre><code>void showMessage() {
+  puts("Welcome to Programming in C!");
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="question">
+          <h2>d. Components of Function</h2>
+          <div class="answer">
+            <p>Each function in C is made up of the following parts:</p>
+
+            <h3>i. Function Prototype</h3>
+            <p>This line informs the compiler about the function's signature before its actual definition.</p>
+            <pre><code>float divide(float, float);</code></pre>
+
+            <h3>ii. Function Call</h3>
+            <p>Triggers the function's execution by specifying its name with actual arguments.</p>
+            <pre><code>float result = divide(10.0, 2.5);</code></pre>
+
+            <h3>iii. Function Definition</h3>
+            <p>This contains the full code of the function.</p>
+            <pre><code>float divide(float a, float b) {
+  return a / b;
+}</code></pre>
+
+            <h3>iv. Return Type</h3>
+            <p>The return type specifies what kind of value the function sends back. For example:</p>
+            <pre><code>char getGrade();
+int computeSum();
+void printLine();</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="categories">
+        <h1>Function Classification in C</h1>
+
+        <div class="question">
+          <h2>1. Function with No Parameters and Value-Returning</h2>
+          <div class="answer">
+            <p>This function doesn't take input but returns a value. Example: returns a fixed discount rate.</p>
+            <pre><code>float getDiscount() {
+  return 5.0;
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="question">
+          <h2>2. Function with Parameters and Value-Returning</h2>
+          <div class="answer">
+            <p>Takes arguments and returns the computed result. Example: Find the greater of two numbers.</p>
+            <pre><code>int max(int x, int y) {
+  return (x > y) ? x : y;
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="question">
+          <h2>3. Function with No Parameters and Non-Returning</h2>
+          <div class="answer">
+            <p>Performs a task without accepting input or returning a value. Example: displays a greeting message.</p>
+            <pre><code>void welcomeMessage() {
+  printf("Good day!\n");
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="question">
+          <h2>4. Function with Parameters and Non-Returning</h2>
+          <div class="answer">
+            <p>Uses arguments to perform an action but doesn't return any result. Example: print stars based on input number.</p>
+            <pre><code>void printStars(int n) {
+  for (int i = 0; i < n; i++) {
+    printf("*");
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="storage">
+        <h1>Understanding Storage Classes in C</h1>
+
+        <div class="question">
+          <h2>i. Automatic Storage Class</h2>
+          <div class="answer">
+            <pre><code>void check() {
+  int flag = 1; // auto by default
+  if (flag)
+    printf("Active\n");
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="question">
+          <h2>ii. External Storage Class</h2>
+          <div class="answer">
+            <pre><code>extern int total; // shared across files</code></pre>
+          </div>
+        </div>
+
+        <div class="question">
+          <h2>iii. Register Storage Class</h2>
+          <div class="answer">
+            <pre><code>void loopFast() {
+  register int i;
+  for (i = 0; i < 100; i++) {
+    // do something
+  }
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="question">
+          <h2>iv. Static Storage Class</h2>
+          <div class="answer">
+            <pre><code>void counter() {
+  static int count = 0;
+  count++;
+  printf("%d\n", count);
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="recursion">
+        <h1>Understanding Recursive Functions in C</h1>
+
+        <div class="question">
+          <h2>Example: Sum of Natural Numbers Using Recursion</h2>
+          <div class="answer">
+            <pre><code>#include &lt;stdio.h&gt;
+
+int sum(int n);
+
+int main() {
+  int num = 5;
+  printf("Sum = %d", sum(num));
+  return 0;
+}
+
+int sum(int n) {
+  if (n == 1) return 1;
+  return n + sum(n - 1);
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="arraypass">
+        <h1>Demonstration of Passing Array to a Function in C</h1>
+
+        <div class="question">
+          <h2>Example 1: Calculating Average</h2>
+          <div class="answer">
+            <pre><code>#include &lt;stdio.h&gt;
+
+float average(int arr[], int size) {
+  int sum = 0;
+  for (int i = 0; i < size; i++) {
+    sum += arr[i];
+  }
+  return (float)sum / size;
+}
+
+int main() {
+  int marks[] = {70, 80, 90};
+  printf("Average: %.2f\n", average(marks, 3));
+  return 0;
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="question">
+          <h2>Example 2: Inverting Array Signs</h2>
+          <div class="answer">
+            <pre><code>#include &lt;stdio.h&gt;
+
+void invertSigns(int nums[], int len) {
+  for (int i = 0; i < len; i++) {
+    nums[i] = -nums[i];
+  }
+}
+
+int main() {
+  int values[] = {5, -10, 15};
+  invertSigns(values, 3);
+  for (int i = 0; i < 3; i++) {
+    printf("%d ", values[i]);
+  }
+  return 0;
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
